@@ -1,0 +1,19 @@
+<div>
+  <mat-toolbar color="primary">
+    <span>My Application</span>
+  </mat-toolbar>
+</div>
+
+<form id="bookname" class="searchbookname">
+  <label> Filter books by name:</label>
+  <input name="term" [(ngModel)]="term">
+</form>
+
+<mat-card *ngFor="let book of books | filterpipe:term">
+  <mat-card-content>
+    <div>
+      {{book.name }}
+      {{book.year}}
+    </div>
+  </mat-card-content>
+</mat-card>
